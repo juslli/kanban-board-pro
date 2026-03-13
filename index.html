@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <main class="container">
+    <header class="topbar">
+      <span class="badge">Produtividade</span>
+      <h1>Kanban Board Pro</h1>
+      <p>Organize suas tarefas com arrastar e soltar.</p>
+
+      <div class="top-actions">
+        <button id="clear-board" class="clear-board-btn">Limpar quadro</button>
+      </div>
+    </header>
+
+    <section class="board">
+      <div class="column" data-column="todo">
+        <div class="column-header">
+          <h2>A Fazer</h2>
+          <span class="count" id="count-todo">0</span>
+        </div>
+
+        <div class="task-list" id="todo"></div>
+
+        <div class="add-task">
+          <input type="text" placeholder="Nova tarefa..." id="todo-input">
+          <button onclick="addTask('todo')">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="column" data-column="progress">
+        <div class="column-header">
+          <h2>Em Progresso</h2>
+          <span class="count" id="count-progress">0</span>
+        </div>
+
+        <div class="task-list" id="progress"></div>
+
+        <div class="add-task">
+          <input type="text" placeholder="Nova tarefa..." id="progress-input">
+          <button onclick="addTask('progress')">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="column" data-column="done">
+        <div class="column-header">
+          <h2>Concluído</h2>
+          <span class="count" id="count-done">0</span>
+        </div>
+
+        <div class="task-list" id="done"></div>
+
+        <div class="add-task">
+          <input type="text" placeholder="Nova tarefa..." id="done-input">
+          <button onclick="addTask('done')">Adicionar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
